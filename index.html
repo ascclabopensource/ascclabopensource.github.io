@@ -26,152 +26,126 @@
 
     <body>
         <center>
-            <h1>ASCC HomeSoundNet</h1>
+            <h1>ASCC Activities of Daily Living Dataset</h1>
         </center>
         <h2>1. Introduction</h2>
-        <p>This website contains the ASCC HomeSoundNet Dataset, which is a dataset of home event sounds. At this point, this dataset consists of 36 categories of sound events. There are a total of 31,423 audio clips with a total time of 138,522 seconds. The audios clips are collected from our ASCC Smart Home Testbed, and  online existing datasets, including Google Audioset [1], CHIME-HOME [2], SINS [3] and Eating Sound Collection [4]. We also used web crawler technique to search and download related audios uploaded by users from all over the world from Freesound [5]. To collect our own audio data,  a laptop was used to record the audios at different distances and in different rooms.</p>
+        <p>
+            Activities of daily living (ADLs) monitoring is essenitial in elderly field as it provides daily activities information for caregivers. In human daily life, different activities occur in various locations and generate distinct sounds and body movement. We can combine this kind of information to recognize the activities.
+        </p>
 
-        <p>The original audio clips from different sources have different sampling rates, durations and channels. These data are processed and unified into two sampling frequencies: 32kHz and 8kHz with each audio piece having less than 5 seconds.  The sampling rate of 8kHz results in less data, which fits for systems that have less computational resources, such as wearable computing devices.  All the audio clips are manually verified and those with no sound event or unnoticeable sound event are removed.</p>
+        <p>
+            This dataset includes activities as long as the corresponding data: image, audio, motion. The data was collected from ASCCLab smarthome testbed, as shown in Figure 1. We mounted the wearable device shown in Figure 2 on the chest to collect image, audio and motion data.
+        </p>
 
-        <h2>2. Audios</h2>
-        <p>The dataset is available on <a href= "https://drive.google.com/drive/folders/1ThrF4lY6tkD810Ce4etmMOn125KvZvn6?usp=sharing" >Google Drive</a>. The following table shows the categories and the amount of audios of each category in the dataset. Clike the category name to navigate to the corresponding audios.</p>
+        <p>
+            The dataset follows the daily patterns of Milan in date 12/11/2009 from Casas project [1], which contains 14 activities. And the activities are between 08:46:27 to 22:48:49.
+        </p>
+
+       <center>
+            <img src="adl_person_testbed.png" width="500" height="218" alt="Smarthome testbed"> 
+            <h5>Figure 1. Smarthome Testbed</h5>
+       </center>
+
+        <center>
+            <img src="whitebox2.png" width="400" height="316" alt="Wearable device">
+            <h5>Figure 2. The wearable device used for data collection</h5>
+        </center>
+       
+
+        <h2 id="dataset">2. Download</h2>
+        <p>The dataset is available on <a href= "https://drive.google.com/drive/folders/1ThrF4lY6tkD810Ce4etmMOn125KvZvn6?usp=sharing" >Google Drive</a>.
+        </p>
 
 
+        <p>
+        The images collected by the camera  are with size 640*480. Audio clips collected by the microphone are with 2 seconds duration, 32kHz each. The motion data collected by accelerometer is with 100 Hz.
+        </p>
 
-
+        <p>
+        The following table and figure showsthe categories and the amount of audios of each category in the dataset. Clike the category name to navigate to the corresponding audios.
+        </p>
 
         <center>
             <style type="text/css">
                 .tg  {border-collapse:collapse;border-color:#aaa;border-spacing:0;}
                 .tg td{background-color:#fff;border-bottom-width:1px;border-color:#aaa;border-style:solid;border-top-width:1px;
-                  border-width:0px;color:#333;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;
+                  border-width:1px;color:#333;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;
                   word-break:normal;}
                 .tg th{background-color:#f38630;border-bottom-width:1px;border-color:#aaa;border-style:solid;border-top-width:1px;
-                  border-width:0px;color:#fff;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;
+                  border-width:1px;color:#fff;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;
                   padding:10px 5px;word-break:normal;}
-                .tg .tg-1wig{font-weight:bold;text-align:left;vertical-align:top}
+                .tg .tg-1wig{font-weight:bold;text-align:center;vertical-align:top}
                 .tg .tg-0lax{text-align:left;vertical-align:top}
                 </style>
                 <table class="tg">
                 <thead>
                   <tr>
-                    <th class="tg-1wig">Category</th>
-                    <th class="tg-1wig">Amount</th>
-                    <th class="tg-1wig">Category</th>
-                    <th class="tg-1wig">Amount</th>
-                    <th class="tg-1wig">Category</th>
-                    <th class="tg-1wig">Amount</th>
-                    <th class="tg-1wig">Category</th>
-                    <th class="tg-1wig">Amount</th>
+                    <th class="tg-1wig">Location</th>
+                    <th class="tg-1wig">Motion</th>
+                    <th class="tg-1wig" colspan="2">Audio</th>
+   
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
-                    <td class="tg-0lax"> <a href="https://drive.google.com/drive/folders/1RFqWtNnnhE4QupmDvOqQ_VIwDJW0xQS5?usp=sharing">  Blender </a></td>
-                    <td class="tg-0lax">251</td>
-                    <td class="tg-0lax"><a href="https://drive.google.com/drive/folders/1tTY8-xNHU764ZWhcaXIZXhPIMzg5DGvv?usp=sharing">  Breath </a></td>
-                    <td class="tg-0lax">678</td>
-                    <td class="tg-0lax"><a href="https://drive.google.com/drive/folders/1Ax2IV-iFuvZRdidQr0VpfN3DKc22Sh5A?usp=sharing">  Burp </a></td>
-                    <td class="tg-0lax">234</td>
-                    <td class="tg-0lax"><a href="https://drive.google.com/drive/folders/197HPHYsiDtSc8MWh0_fjLMONNjK8jC84?usp=sharing">  Clear throat </a></td>
-                    <td class="tg-0lax">200</td>
+                    <td class="tg-0lax"> <a href="#dataset">  Bathroom </a></td>
+                    <td class="tg-0lax"> <a href="#dataset">  Sitting </a></td>  
+                    <td class="tg-0lax"> <a href="#dataset">  Door Opening </a></td>  
+                    <td class="tg-0lax"> <a href="#dataset">  Drinking </a></td>  
                   </tr>
+
                   <tr>
-                    <td class="tg-0lax"><a href="https://drive.google.com/drive/folders/1eodiVe92tpCgol_iEe9L6OExAUKj5ucZ?usp=sharing">  Cloth dryer </a></td>
-                    <td class="tg-0lax">1948</td>
-                    <td class="tg-0lax"><a href="https://drive.google.com/drive/folders/1i-W5KuVqhJbuv-M8f8mFpII1k8BSEJ0n?usp=sharing">  Cough </a></td>
-                    <td class="tg-0lax">5056</td>
-                    <td class="tg-0lax"><a href="https://drive.google.com/drive/folders/1oxlbiUuptMPLRj82wAVrSy0AIEiPMy1G?usp=sharing">  Cry </a></td>
-                    <td class="tg-0lax">55</td>
-                    <td class="tg-0lax"><a href="https://drive.google.com/drive/folders/1GAZFIWVRFIyvpuj10-xSIbiITB_HBT3A?usp=sharing">  Cut food </a></td>
-                    <td class="tg-0lax">243</td>
+                    <td class="tg-0lax"> <a href="#dataset">  Bedroom </a></td>
+                    <td class="tg-0lax"> <a href="#dataset">  Jumping </a></td>  
+                    <td class="tg-0lax"> <a href="#dataset">  Eating </a></td>  
+                    <td class="tg-0lax"> <a href="#dataset">  Flusing Toiet </a></td>  
                   </tr>
+
                   <tr>
-                    <td class="tg-0lax"><a href="https://drive.google.com/drive/folders/1ZC3gSi3t60CYEi5z5a26AYSvLzLkFNAK?usp=sharing">  Cut nails </a></td>
-                    <td class="tg-0lax">88</td>
-                    <td class="tg-0lax"><a href="https://drive.google.com/drive/folders/1XSN4jnebNycIMcsfYW_5O5GJi5Gc_2FG?usp=sharing">  Door open&amp;close </a></td>
-                    <td class="tg-0lax">207</td>
-                    <td class="tg-0lax"><a href="https://drive.google.com/drive/folders/1AuMEBG-V0acJ-JKpoBcUKZr3n4McqTRK?usp=sharing">  Drink </a></td>
-                    <td class="tg-0lax">390</td>
-                    <td class="tg-0lax"><a href="https://drive.google.com/drive/folders/1Z8fQYrr1QAwll0PUWAg9VXrzCynKKsix?usp=sharing">  Eat </a></td>
-                    <td class="tg-0lax">1999</td>
+                    <td class="tg-0lax"> <a href="#dataset">  Kitchen </a></td>
+                    <td class="tg-0lax"> <a href="#dataset">  Standing </a></td>  
+                    <td class="tg-0lax"> <a href="#dataset">  Keyboard </a></td>  
+                    <td class="tg-0lax"> <a href="#dataset">  Microwave </a></td>  
                   </tr>
+
                   <tr>
-                    <td class="tg-0lax"><a href="https://drive.google.com/drive/folders/1rDrbLQV9dC6aWplhvCwtWaaeA_c6OxzG?usp=sharing">  Fan </a></td>
-                    <td class="tg-0lax">145</td>
-                    <td class="tg-0lax"><a href="https://drive.google.com/drive/folders/1cceLNN0Ncnt4hPN1vKkdd4_0GjmkC0Hr?usp=sharing">  Flush toilet </a></td>
-                    <td class="tg-0lax">1950</td>
-                    <td class="tg-0lax"><a href="https://drive.google.com/drive/folders/1Uytl838WaqKrVt4mNpaPwTecTzucQZrB?usp=sharing">  Fry food </a></td>
-                    <td class="tg-0lax">926</td>
-                    <td class="tg-0lax"><a href="https://drive.google.com/drive/folders/14v2tWHle4vTt5PgCgf1hmWiETa11Y-ZK?usp=sharing">  Hair dryer </a></td>
-                    <td class="tg-0lax">629</td>
+                    <td class="tg-0lax"> <a href="#dataset">  Living Room </a></td>
+                    <td class="tg-0lax"> <a href="#dataset">  Walking </a></td>  
+                    <td class="tg-0lax"> <a href="#dataset">  Pouring Water </a></td>  
+                    <td class="tg-0lax"> <a href="#dataset">  Environment(Quiet) </a></td>  
                   </tr>
+
                   <tr>
-                    <td class="tg-0lax"><a href="https://drive.google.com/drive/folders/1xVM3Jxe_pLt9AVP5Tb-zHrlF7G2b-67A?usp=sharing">  Have shower </a></td>
-                    <td class="tg-0lax">210</td>
-                    <td class="tg-0lax"><a href="https://drive.google.com/drive/folders/1utjM3lra4ddU3d5T--IXyhgaqxOWrIgD?usp=sharing">  Hiccup </a></td>
-                    <td class="tg-0lax">178</td>
-                    <td class="tg-0lax"><a href="https://drive.google.com/drive/folders/1QLgZrsaCYsI3ZwgYMaGlO6of-_0aTrM2?usp=sharing">  Human speech </a></td>
-                    <td class="tg-0lax">637</td>
-                    <td class="tg-0lax"><a href="https://drive.google.com/drive/folders/19eJ0rl4HKiPH7fGveOUKzfW82Ku7-ki5?usp=sharing">  Keyboard typing </a></td>
-                    <td class="tg-0lax">1875</td>
+                    <td class="tg-0lax"> <a href="#dataset">  Hallway </a></td>
+                    <td class="tg-0lax"> <a href="#dataset">  Jogging </a></td>  
+                    <td class="tg-0lax"> <a href="#dataset">  Brushing Tooth </a></td>  
+                    <td class="tg-0lax"> <a href="#dataset">  Watching TV </a></td>  
                   </tr>
+
                   <tr>
-                    <td class="tg-0lax"><a href="https://drive.google.com/drive/folders/1Qx2LLPceufbCEhUgfb3cIi648U8Gj0yr?usp=sharing">  Laugh </a></td>
-                    <td class="tg-0lax">101</td>
-                    <td class="tg-0lax"><a href="https://drive.google.com/drive/folders/1_Ierf26WjlcpQ5hS2KNmwXSRmhI4w5RM?usp=sharing">  Microwave </a></td>
-                    <td class="tg-0lax">300</td>
-                    <td class="tg-0lax"><a href="https://drive.google.com/drive/folders/1QQHwx3hgFMZaybDlvCQic9LF-7M1Cww1?usp=sharing">  Pour water into glass </a></td>
-                    <td class="tg-0lax">950</td>
-                    <td class="tg-0lax"><a href="https://drive.google.com/drive/folders/1mXSniFmqMuBNUve7j7gQH9GJ8s_kUQ8T?usp=sharing">  Quiet </a></td>
-                    <td class="tg-0lax">250</td>
-                  </tr>
-                  <tr>
-                    <td class="tg-0lax"><a href="https://drive.google.com/drive/folders/1ATJahxQmMDeSmp1Qk4cpNwKUlnaXVKj6?usp=sharing">  Refrigerator </a></td>
-                    <td class="tg-0lax">396</td>
-                    <td class="tg-0lax"><a href="https://drive.google.com/drive/folders/1sOMoUkZJixlGovXjNsDBzHAPi5ASun-5?usp=sharing">  Shave </a></td>
-                    <td class="tg-0lax">716</td>
-                    <td class="tg-0lax"><a href="https://drive.google.com/drive/folders/1JQrjBM-8zeYseZsZxZK7hIDozmcfv2ot?usp=sharing">  Sneeze </a></td>
-                    <td class="tg-0lax">237</td>
-                    <td class="tg-0lax"><a href="https://drive.google.com/drive/folders/157HbbcjvVMoeL0ODIOFO-fpCx2X_hgN9?usp=sharing">  Snore </a></td>
-                    <td class="tg-0lax">3345</td>
-                  </tr>
-                  <tr>
-                    <td class="tg-0lax"><a href="https://drive.google.com/drive/folders/1kUkZJHW0gwjsE83N3Ma-nKmQve2d3EQH?usp=sharing">  Brush tooth </a></td>
-                    <td class="tg-0lax">658</td>
-                    <td class="tg-0lax"><a href="https://drive.google.com/drive/folders/1nF26uT6mDmQE96o_8Rf6McdmlBNCocp1?usp=sharing">  Watch TV </a></td>
-                    <td class="tg-0lax">563</td>
-                    <td class="tg-0lax"><a href="https://drive.google.com/drive/folders/1nbo4CnmVShBPNeEeMzVOGwHlCwzZxGd6?usp=sharing">  Use scissors </a></td>
-                    <td class="tg-0lax">862</td>
-                    <td class="tg-0lax"><a href="https://drive.google.com/drive/folders/1T_51hSPiNe0QvuuuyYi-TfgnPQYiAXaU?usp=sharing">  Vaccum cleaner </a></td>
-                    <td class="tg-0lax">482</td>
-                  </tr>
-                  <tr>
-                    <td class="tg-0lax"><a href="https://drive.google.com/drive/folders/1jlE54hWay8BogHXq-AtOT0jzE--m89r3?usp=sharing">  Wash dishes </a></td>
-                    <td class="tg-0lax">1104</td>
-                    <td class="tg-0lax"><a href="https://drive.google.com/drive/folders/1FCHvetzzWB89hxIiY499tCf4c86OQnbv?usp=sharing">  Wash hand </a></td>
-                    <td class="tg-0lax">681</td>
-                    <td class="tg-0lax"><a href="https://drive.google.com/drive/folders/1y1_h26ybKaelwfx_qvh20nEtdb0GSFji?usp=sharing">  Washing machine </a></td>
-                    <td class="tg-0lax">2737</td>
-                    <td class="tg-0lax"><a href="https://drive.google.com/drive/folders/1fBJn1vX1i5CKA4l-r8ctZSc9QvJkp1vL?usp=sharing">  Yawn </a></td>
-                    <td class="tg-0lax">150</td>
-                  </tr>
+                    <td class="tg-0lax"> <a href="#dataset">  Door Area </a></td>
+                    <td class="tg-0lax"> <a href="#dataset">  Laying </a></td>  
+                    <td class="tg-0lax"> <a href="#dataset">  Vacuum </a></td>  
+                    <td class="tg-0lax"> <a href="#dataset">  Washing Hands </a></td>  
+                  </tr>            
+                  
                 </tbody>
                 </table>
         </center>
-
+        <br> <br>
+       <div style="text-align: center">
+            <img src="res_sample.png" width="500" height="409" alt="Image samples">
+            <h5>Figure 3. Location samples from the testbed</h5>
+       </div>
                 
 
 
         <h2>Reference</h2>
-        <p class="italic">[1]. J. F. Gemmeke et al., "Audio Set: An ontology and human-labeled dataset for audio events," 2017 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP), 2017, pp. 776-780, doi: 10.1109/ICASSP.2017.7952261.</p>
-        <p class="italic">[2]. P. Foster, S. Sigtia, S. Krstulovic, J. Barker and M. D. Plumbley, "Chime-home: A dataset for sound source recognition in a domestic environment," 2015 IEEE Workshop on Applications of Signal Processing to Audio and Acoustics (WASPAA), 2015, pp. 1-5, doi: 10.1109/WASPAA.2015.7336899.</p>
-        <p class="italic">[3]. G. Dekkers, S. Lauwereins, B. Thoen, M. W. Adhana, H. Brouckxon, T. van Waterschoot, B. Vanrumste, M. Verhelst, and P. Karsmakers, “The SINS database for detection of daily activities in a home environment using an acoustic sensor network,” in Proc. DCASE Workshop, November 2017, pp. 32–36.</p>
-        <p class="italic">[4]. https://www.kaggle.com/datasets/mashijie/eating-sound-collection</p>
-        <p class="italic">[5]. https://freesound.org/</p>
-        <p class="italic">[6]. H. M. Do, K. C. Welch and W. Sheng, "SoHAM: A Sound-Based Human Activity Monitoring Framework for Home Service Robots," in IEEE Transactions on Automation Science and Engineering, vol. 19, no. 3, pp. 2369-2383, July 2022, doi: 10.1109/TASE.2021.3081406.</p>
+        <p class="italic">[1]. Casas datasets. [Online]. Available: http://casas.wsu.edu/datasets.</p>
 
     </body>
+
+    <footer>
+       <center> 2023 - ASCC LAB | Oklahoma State University | All Rights Reserved </center> 
+    </footer>
 </html>
-
-
