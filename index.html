@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>ASCC HomeSoundNet</title>
+        <title>ASCC Activities of Daily Living Dataset</title>
         <style>
             table, th, td {
             border:1px solid black;
@@ -21,7 +21,38 @@
             p.oblique {
             font-style: oblique;
             }
-            </style>
+
+        </style>
+
+        <!-- css style for table -->
+        <style type="text/css">
+        .tg  {border-collapse:collapse; border-color:#aaa; border-spacing:0;}
+        .tg td{background-color:#fff; border-bottom-width:1px; border-color:#aaa; border-style:solid; border-top-width:1px;
+          border-width:1px; color:#333; font-family:Arial, sans-serif; font-size:14px; overflow:hidden; padding:10px 5px;
+          word-break:normal;}
+        .tg th{background-color:#f38630; border-bottom-width:1px; border-color:#aaa; border-style:solid; border-top-width:1px;
+          border-width:1px; color:#fff; font-family:Arial, sans-serif; font-size:14px; font-weight:normal; overflow:hidden;
+          padding:10px 5px; word-break:normal;}
+        .tg-1wig{font-weight:bold; text-align:center; vertical-align:top}
+        .tg-0lax{text-align:left; vertical-align:top}
+        </style>
+
+        <style type="text/css">
+            .scroller {
+              width: 800px;
+              /*height: 100px;*/
+              overflow-y: scroll;
+              scrollbar-width: thin;
+            }
+        </style>
+
+        <!-- For displaying the python code -->
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/styles/default.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+
+
     </head>
 
     <body>
@@ -53,30 +84,19 @@
        
 
         <h2 id="dataset">2. Download</h2>
-        <p>The dataset is available on <a href= "https://drive.google.com/drive/folders/1ThrF4lY6tkD810Ce4etmMOn125KvZvn6?usp=sharing" >Google Drive</a>.
+        <p>The dataset is available on <a href= "https://drive.google.com/drive/folders/1NiBYiyCpDSP5loWQn3a1v2pg47XlO_pA" >Google Drive</a>.
         </p>
 
 
         <p>
-        The images collected by the camera  are with size 640*480. Audio clips collected by the microphone are with 2 seconds duration, 32kHz each. The motion data collected by accelerometer is with 100 Hz.
+        The images collected by the camera  are with size 640*480. Audio clips collected by the microphone are with 2 seconds duration, 32kHz each. The motion data collected by accelerometer is with 100 Hz, 2 second duration.
         </p>
 
         <p>
-        The following table and figure showsthe categories and the amount of audios of each category in the dataset. Clike the category name to navigate to the corresponding audios.
+        The following table shows the location, moiton actions and sound events in the dataset. Also the Figure 3 shows the location samples. The Python code shows the detailed activities with begin time and end time.
         </p>
 
         <center>
-            <style type="text/css">
-                .tg  {border-collapse:collapse;border-color:#aaa;border-spacing:0;}
-                .tg td{background-color:#fff;border-bottom-width:1px;border-color:#aaa;border-style:solid;border-top-width:1px;
-                  border-width:1px;color:#333;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;
-                  word-break:normal;}
-                .tg th{background-color:#f38630;border-bottom-width:1px;border-color:#aaa;border-style:solid;border-top-width:1px;
-                  border-width:1px;color:#fff;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;
-                  padding:10px 5px;word-break:normal;}
-                .tg .tg-1wig{font-weight:bold;text-align:center;vertical-align:top}
-                .tg .tg-0lax{text-align:left;vertical-align:top}
-                </style>
                 <table class="tg">
                 <thead>
                   <tr>
@@ -137,8 +157,76 @@
             <img src="res_sample.png" width="500" height="409" alt="Image samples">
             <h5>Figure 3. Location samples from the testbed</h5>
        </div>
-                
 
+       <center>
+            <pre>
+                <code class="python; scroller" style="text-align: left; ">
+                # the ground truth dict of daily activities with time lables
+                # key: begin time
+                # value: begin time, end time, activity
+                ground_truth_dict = {
+                '2009-12-11-08-46-27': ('2009-12-11-08-46-27', '2009-12-11-08-51-26', 'Kitchen_Activity'),
+                '2009-12-11-09-10-59': ('2009-12-11-09-10-59', '2009-12-11-09-11-23', 'Leave_Home'),
+                '2009-12-11-09-12-06': ('2009-12-11-09-12-06', '2009-12-11-09-16-40', 'Guest_Bathroom'),
+                '2009-12-11-09-16-46': ('2009-12-11-09-16-46', '2009-12-11-09-19-00', 'Read'),
+
+                '2009-12-11-10-08-48': ('2009-12-11-10-08-48', '2009-12-11-10-53-19', 'Kitchen_Activity'),
+                '2009-12-11-10-53-27': ('2009-12-11-10-53-27', '2009-12-11-10-53-39', 'Leave_Home'),
+                '2009-12-11-11-07-25': ('2009-12-11-11-07-25', '2009-12-11-12-00-50', 'Kitchen_Activity'),
+                '2009-12-11-12-00-58': ('2009-12-11-12-00-58', '2009-12-11-12-19-25', 'Guest_Bathroom'),
+                '2009-12-11-12-19-38': ('2009-12-11-12-19-38', '2009-12-11-12-57-39', 'Read'),
+
+                '2009-12-11-12-57-51': ('2009-12-11-12-57-51', '2009-12-11-13-01-07', 'Kitchen_Activity'),
+                '2009-12-11-13-17-14': ('2009-12-11-13-17-14', '2009-12-11-13-36-58', 'Guest_Bathroom'),
+                '2009-12-11-13-37-10': ('2009-12-11-13-37-10', '2009-12-11-13-50-55', 'Leave_Home'),
+                '2009-12-11-13-51-02': ('2009-12-11-13-51-02', '2009-12-11-13-51-10', 'Master_Bedroom_Activity'),
+                '2009-12-11-13-51-48': ('2009-12-11-13-51-48', '2009-12-11-13-53-48', 'Read'),
+                '2009-12-11-13-56-56': ('2009-12-11-13-56-56', '2009-12-11-13-57-00', 'Master_Bedroom_Activity'),
+
+
+                '2009-12-11-13-57-21': ('2009-12-11-13-57-21', '2009-12-11-13-57-29', 'Kitchen_Activity'),
+                '2009-12-11-13-57-53': ('2009-12-11-13-57-53', '2009-12-11-14-30-25', 'Master_Bedroom_Activity'),
+                '2009-12-11-14-30-29': ('2009-12-11-14-30-29', '2009-12-11-14-35-32', 'Read'),
+                '2009-12-11-14-35-36': ('2009-12-11-14-35-36', '2009-12-11-14-36-52', 'Desk_Activity'),
+                '2009-12-11-14-39-22': ('2009-12-11-14-39-22', '2009-12-11-14-39-50', 'Guest_Bathroom'),
+
+                '2009-12-11-14-40-04': ('2009-12-11-14-40-04', '2009-12-11-15-10-15', 'Kitchen_Activity'),
+                '2009-12-11-15-10-23': ('2009-12-11-15-10-23', '2009-12-11-15-30-36', 'Watch_TV'),
+                '2009-12-11-15-30-40': ('2009-12-11-15-30-40', '2009-12-11-15-32-16', 'Read'),
+                '2009-12-11-16-06-49': ('2009-12-11-16-06-49', '2009-12-11-16-10-57', 'Kitchen_Activity'),
+                '2009-12-11-16-11-13': ('2009-12-11-16-11-13', '2009-12-11-16-11-52', 'Guest_Bathroom'),
+
+                '2009-12-11-16-21-26': ('2009-12-11-16-21-26', '2009-12-11-16-43-38', 'Watch_TV'),
+                '2009-12-11-16-43-50': ('2009-12-11-16-43-50', '2009-12-11-16-45-03', 'Kitchen_Activity'),
+                '2009-12-11-16-45-11': ('2009-12-11-16-45-11', '2009-12-11-16-55-59', 'Watch_TV'),
+                '2009-12-11-17-37-40': ('2009-12-11-17-37-40', '2009-12-11-17-37-47', 'Kitchen_Activity'),
+                '2009-12-11-17-37-48': ('2009-12-11-17-37-48', '2009-12-11-17-38-00', 'Guest_Bathroom'),
+
+                '2009-12-11-17-38-04': ('2009-12-11-17-38-04', '2009-12-11-17-43-02', 'Kitchen_Activity'),
+                '2009-12-11-17-49-20': ('2009-12-11-17-49-20', '2009-12-11-18-40-20', 'Watch_TV'),
+                '2009-12-11-18-40-36': ('2009-12-11-18-40-36', '2009-12-11-18-41-04', 'Guest_Bathroom'),
+                '2009-12-11-18-41-09': ('2009-12-11-18-41-09', '2009-12-11-18-52-58', 'Kitchen_Activity'),
+                '2009-12-11-18-53-00': ('2009-12-11-18-53-00', '2009-12-11-20-36-40', ''), # Empty
+
+                '2009-12-11-20-36-42': ('2009-12-11-20-36-42', '2009-12-11-20-38-51', 'Kitchen_Activity'),
+                '2009-12-11-20-38-55': ('2009-12-11-20-38-55', '2009-12-11-20-39-56', 'Guest_Bathroom'),
+                '2009-12-11-20-42-12': ('2009-12-11-20-42-12', '2009-12-11-20-49-02', 'Kitchen_Activity'),
+                '2009-12-11-20-49-06': ('2009-12-11-20-49-06', '2009-12-11-20-49-14', 'Guest_Bathroom'),
+                '2009-12-11-20-49-54': ('2009-12-11-20-49-54', '2009-12-11-20-51-56', 'Watch_TV'),
+
+                '2009-12-11-21-54-01': ('2009-12-11-21-54-01', '2009-12-11-21-55-21', 'Guest_Bathroom'),
+                '2009-12-11-22-05-58': ('2009-12-11-22-05-58', '2009-12-11-22-37-00', 'Watch_TV'),
+                '2009-12-11-22-37-13': ('2009-12-11-22-37-13', '2009-12-11-22-37-52', 'Guest_Bathroom'),
+                '2009-12-11-22-38-29': ('2009-12-11-22-38-29', '2009-12-11-22-41-02', 'Kitchen_Activity'),
+
+                '2009-12-11-22-41-10': ('2009-12-11-22-41-10', '2009-12-11-22-47-09', 'Leave_Home'),
+                '2009-12-11-22-47-25': ('2009-12-11-22-47-25', '2009-12-11-22-47-41', 'Guest_Bathroom'),
+                '2009-12-11-22-47-53': ('2009-12-11-22-47-53', '2009-12-11-22-48-49', 'Master_Bedroom_Activity'),
+                }
+                </code>
+            </pre>
+        </center>
+                
 
         <h2>Reference</h2>
         <p class="italic">[1]. Casas datasets. [Online]. Available: http://casas.wsu.edu/datasets.</p>
